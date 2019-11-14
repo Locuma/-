@@ -5,9 +5,29 @@
 </head>
 <body>
 <div>
-    <h1>Create post and variable value from controller is: <?= $mamal[0]->created_at ?></h1>
+    @foreach($mamals as $index=>$mamal)
+    <h1>Create post and variable value from controller is: <?= $mamal->created_at ?></h1>
+    @endforeach
     <button type="button" onclick="window.location='{{ url("/") }}'">Return to homepage</button>
-    <input type="button" onclick="sayHo()" value="saySmth" id="supaButton">
+    <input type="button" onclick="sayHo()" value="saySmth" id="supaButton"><br><hr>
+
+    <form action="/testo" method="post">
+        {{ csrf_field() }}
+        <table border="1">
+            <tbody>
+            <th>One</th>
+            <th>Two</th>
+            <th>Three</th>
+            <tr>
+                <td><input name="abra" type="text" placeholder="type anything"></td>
+                <td><input name="kadabra" type="text" placeholder="aga"></td>
+                <td><input name="alakazam" type="text" placeholder="one more"></td>
+            </tr>
+            </tbody>
+        </table>
+        <input type="submit" value="poehali" alt="pgnali">
+    </form>
+
 </div>
 </body>
 </html>

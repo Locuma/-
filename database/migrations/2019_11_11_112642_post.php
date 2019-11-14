@@ -17,7 +17,7 @@ class Post extends Migration
             $table->bigIncrements('id')->unique();
             $table->string('article');
             $table->string('content');
-            $table->timestamp('created_at');
+            $table->timestamp('created_at')->useCurrent();
             $table->integer('user_id');
 
         });

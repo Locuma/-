@@ -20,9 +20,7 @@ Route::get('/', function () {
 
 Route::get('/test', 'Post\PostController@test');
 
-/*Route::get('/test', 'Post\PostController@test',[
-    'mamal' => 'dog'
-]);*/
+Route::post('/testo', 'Post\PostController@testo');
 
 Auth::routes();
 
