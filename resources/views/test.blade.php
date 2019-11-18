@@ -6,12 +6,12 @@
 <body>
 <div>
     @foreach($mamals as $index=>$mamal)
-    <h1>Create post and variable value from controller is: <?= $mamal->created_at ?></h1>
+    <h1>Create post and variable value from controller is: <?= $mamal->article ?></h1>
     @endforeach
     <button type="button" onclick="window.location='{{ url("/") }}'">Return to homepage</button>
     <input type="button" onclick="sayHo()" value="saySmth" id="supaButton"><br><hr>
 
-    <form action="/testo" method="post">
+    <form action="/createPost" method="post">
         {{ csrf_field() }}
         <table border="1">
             <tbody>
@@ -19,9 +19,9 @@
             <th>Two</th>
             <th>Three</th>
             <tr>
-                <td><input name="abra" type="text" placeholder="type anything"></td>
-                <td><input name="kadabra" type="text" placeholder="aga"></td>
-                <td><input name="alakazam" type="text" placeholder="one more"></td>
+                <td><input name="article" type="text" placeholder="type anything"></td>
+                <td><input name="content" type="text" placeholder="aga"></td>
+                <td><input name="userId" type="text" placeholder="one more"></td>
             </tr>
             </tbody>
         </table>

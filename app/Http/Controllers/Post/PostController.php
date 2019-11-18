@@ -16,18 +16,27 @@ class PostController extends Controller
      ]);
  }
 
- public function testo(Request $itComes){
-     $firstOne = $itComes->input('abra');
-     $second = $itComes->input('kadabra');
-     $overpowered = $itComes->input('alakazam');
-        $pokemonArray = [
-            'article' => $firstOne,
-            'content' => $second,
-            'user_id' => $overpowered
+ public function createPost(Request $userPostData){
+     $validatedData = $userPostData->validate([
+         'article' => 'required|max:30|min:6|unique:post,article',
+         'content' => 'required|max:300|min:6|',
+         'userId' => 'required|numeric|max:300|min:6|unique:post,user_id'
+     ]);
+
+     $article = $validatedData['article'];
+     $content = $validatedData['content'];
+     $userId = $validatedData['userId'];
+        $postArray = [
+            'article' => $article,
+            'content' => $content,
+            'user_id' => $userId
         ];
-       // echo $firstOne;
-     DB::table('post')->insert($pokemonArray);
+     DB::table('post')->insert($postArray);
      return view('welcome');
+ }
+
+ public function forFun (){
+     echo 'hello world';
  }
 
 
