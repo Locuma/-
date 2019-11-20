@@ -1,3 +1,7 @@
+<?php
+use Illuminate\Auth\SessionGuard;
+?>
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -91,7 +95,9 @@
                     <a href="https://blog.laravel.com">Blog</a>
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
-                    <a href="{{ url("test") }}">Keril</a>
+                    @auth
+                    <a href="{{ url("createPost") }}">Keril</a>
+                        @endauth
                 </div>
             </div>
         </div>

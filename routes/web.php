@@ -18,9 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', 'Post\PostController@test');
+Route::get('/createPost', 'Post\PostController@createPost');
 
-Route::post('/createPost', 'Post\PostController@createPost');
+Route::post('/createPost', 'Post\PostController@savePost');
 
 Auth::routes();
 

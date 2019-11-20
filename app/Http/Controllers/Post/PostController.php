@@ -25,14 +25,14 @@ class PostController extends Controller
         ];
     }
 
- public function test(){
+ public function createPost(){
      $allPostData = new Models\Post();
-     return view('test',[
-         'mamals' => $allPostData->getAllPosts(),
+     return view('create_post',[
+         'posts' => $allPostData->getAllPosts(),
      ]);
  }
 
- public function createPost(Request $userPostData){
+ public function savePost(Request $userPostData){
 
         $customMessages = ['min' => 'Минимальное количество символов для :attribute : 6',
             'required'  => 'A message is required',
