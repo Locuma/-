@@ -1,3 +1,12 @@
+<?php
+/*foreach ($posts['posts'] as $post=>$lol) {
+    var_dump($lol);
+
+}*/
+
+
+//exit;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,7 +14,7 @@
 </head>
 <body>
 <div>
-    @foreach($posts as $index=>$post)
+    @foreach($posts['posts'] as $post)
         <div   style="background-color: #fcfbf5; border: solid; border-radius: 5px;width: 400px">
             <label for="content"><?= $post->article ?></label>
 
@@ -13,7 +22,7 @@
                 <?= $post->content?>
             </div>
             <div>
-            <p>Автор: <?= $post->user_id ?></p>
+            <p>Автор: <?= $post->name ?></p>
             </div>
         </div><br>
     @endforeach

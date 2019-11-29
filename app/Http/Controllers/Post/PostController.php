@@ -26,9 +26,11 @@ class PostController extends Controller
     }
 
  public function createPost(){
-     $allPostData = new Models\Post();
+     $post = new Models\Post();
+     $allPostData = $post->getAllPosts();
+    // var_dump($allPostData);
      return view('create_post',[
-         'posts' => $allPostData->getAllPosts(),
+         'posts' => $allPostData,
      ]);
  }
 
