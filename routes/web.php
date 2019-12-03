@@ -20,7 +20,10 @@ Route::get('/', function () {
 
 Route::get('/createPost', 'Post\PostController@createPost');
 
+Route::get('/allPosts', 'Post\PostController@getAllPosts');
+
 Route::post('/createPost', 'Post\PostController@savePost');
+
 
 Auth::routes();
 
