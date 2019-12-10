@@ -24,6 +24,8 @@ Route::get('/allPosts', 'Post\PostController@getAllPosts');
 
 Route::post('/createPost', 'Post\PostController@savePost');
 
+Route::get('/currentPost/{id}', 'Post\PostController@currentPost');
+
 
 Auth::routes();
 

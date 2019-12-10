@@ -1,3 +1,9 @@
+<?php
+/*foreach ($onePost as $key => $vale) {
+    var_dump($vale);
+}; */
+var_dump($onePost['onePost']);
+exit; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,21 +11,16 @@
 </head>
 <body>
 <div>
-    @foreach($posts['posts'] as $post)
-        <div   style="background-color: #fcfbf5; border: solid; border-radius: 5px;width: 400px">
-            <label for="content"><?= $post->article ?></label>
+        <div style="background-color: #fcfbf5; border: solid; border-radius: 5px;width: 400px">
+            <label for="content"><?= $onePost->article ?></label>
 
             <div id="content" style="background-color: #c7c7c7; border-radius: 5px">
-                <?= $post->content?>
+                <?= $onePost->content?>
             </div>
             <div>
-                <p>Автор: <?= $post->name ?></p>
-            </div>
-            <div>
-                <input type="button" name="currentPost" value="Open this post" onclick="window.location='{{url("currentPost/$post->id")}}'">
+                <p>Автор: <?= $onePost->name ?></p>
             </div>
         </div><br>
-    @endforeach
     <button type="button" onclick="window.location='{{ url("/") }}'">Return to homepage</button>
     <hr>
 
