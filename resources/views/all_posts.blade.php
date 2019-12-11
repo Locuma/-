@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+use Illuminate\Support\Facades\Auth;
+?>
+    <!DOCTYPE html>
 <html>
 <head>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -14,6 +17,8 @@
             </div>
             <div>
                 <p>Автор: <?= $post->name ?></p>
+                <p>Что это: <?= $post->id ?></p>
+                <p>Что : <?= Auth::user()->id ?></p>
             </div>
             <div>
                 <input type="button" name="currentPost" value="Open this post" onclick="window.location='{{url("currentPost/$post->id")}}'">

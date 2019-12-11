@@ -1,8 +1,10 @@
 <?php
-/*foreach ($onePost as $key => $vale) {
-    var_dump($vale);
-}; */
-var_dump($onePost['onePost']);
+/*foreach ($onePost['onePost'] as $key => $value){
+    echo 'key: ' . $key . ' and value: ' . $value;
+} */
+
+echo $onePost['onePost'];
+
 exit; ?>
 <!DOCTYPE html>
 <html>
