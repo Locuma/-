@@ -71,16 +71,15 @@ class PostController extends Controller
     {
         $post = new Models\Post();
         $currentPostData = $post->getOnePost($id);
-        var_dump($currentPostData);
-        exit;
-        //$article = $currentPostData['onePost']->article;
-        //$creatorName = $currentPostData->name;
-        //$content = $currentPostData->content;
+        $article = $currentPostData['onePost']->article;
+        $creatorName = $currentPostData['onePost']->name;
+        $content = $currentPostData['onePost']->content;
+
+
         return view('currentPost', [
-            'onePost' => $currentPostData,
-        //    'article' => $article,
-          //  'creatorName' => $creatorName,
-            //'content' => $content,
+            'article' => $article,
+            'creatorName' => $creatorName,
+            'content' => $content,
         ]);
 
     }

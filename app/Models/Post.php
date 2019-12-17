@@ -26,21 +26,15 @@ class Post extends Model
         $onePostData = DB::table('post')
             ->leftJoin('users', 'post.user_id', '=', 'users.id')
             ->select('post.*', 'users.name')
-            ->where(function($query){
-                $query->where ('users.id','=', 1)
-                      ->where ('post.id', '=', 10);
-            })->get();
-
-        $onePostData = DB::table('post')
-            ->leftJoin('users', 'post.user_id', '=', 'users.id')
-            ->select('post.*', 'users.name')
             ->where([
                 ['users.id','=', $id],
                 ['post.id', '=', 10]
-            ])->get();
+            ])->first();
+        //dd($onePostData);
 
         return [
             'onePost' => $onePostData,
+            'lolo' => "koko",
         ];
     }
 }

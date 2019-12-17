@@ -15,14 +15,15 @@ use Illuminate\Support\Facades\Auth;
             <div id="content" style="background-color: #c7c7c7; border-radius: 5px">
                 <?= $post->content?>
             </div>
-            <div>
+            <div class="postData">
                 <p>Автор: <?= $post->name ?></p>
-                <p>Что это: <?= $post->id ?></p>
-                <p>Что : <?= Auth::user()->id ?></p>
+                <input type="hidden" class="postId" value="{{$post->id}}">
+                <input type="hidden" class="userId" value="{{$post->user_id}}">
             </div>
             <div>
                 <input type="button" name="currentPost" value="Open this post" onclick="window.location='{{url("currentPost/$post->id")}}'">
             </div>
+            <button type="button" onclick="showData(this)">Show data</button>
         </div><br>
     @endforeach
     <button type="button" onclick="window.location='{{ url("/") }}'">Return to homepage</button>
@@ -32,8 +33,9 @@ use Illuminate\Support\Facades\Auth;
 </body>
 </html>
 <script>
-    function sayHo() {
-        var varvar = $("#supaButton").val();
-        alert(varvar);
+    function showData(element) {
+        var userId = $(element).siblings(".postData").find(".userId").val();
+        var postId = $(element).siblings(".postData").find(".postId").val();
+        alert("user ID is: " + userId + ". And post ID is: " + postId);
     }
 </script>
