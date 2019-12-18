@@ -18,7 +18,8 @@
             </div>
             <div>
                 <label for="postContent"> Content: </label> <br>
-                <textarea name="content" id="postContent"  placeholder="say what you want" style="width: 400px; height: 200px"></textarea>
+                <textarea name="content" id="postContent" placeholder="say what you want"
+                          style="width: 400px; height: 200px"></textarea>
                 @error('content')
                 <p style="color:darkred">{{ $message }}</p>
                 <hr>

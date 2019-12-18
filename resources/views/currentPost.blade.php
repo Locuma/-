@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,14 +16,9 @@
             </div>
         </div><br>
     <button type="button" onclick="window.location='{{ url("/") }}'">Return to homepage</button>
+    <button type="button" onclick="window.location='{{ url("allPosts") }}'">Back</button>
     <hr>
 
 </div>
 </body>
 </html>
-<script>
-    function sayHo() {
-        var varvar = $("#supaButton").val();
-        alert(varvar);
-    }
-</script>

@@ -18,15 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/logout', 'Auth\LoginController@logout');
+
 Route::get('/createPost', 'Post\PostController@createPost');
 
 Route::get('/allPosts', 'Post\PostController@getAllPosts');
 
 Route::post('/createPost', 'Post\PostController@savePost');
 
-Route::get('/currentPost/{id}', 'Post\PostController@currentPost');
-
-
-Auth::routes();
+Route::get('/currentPost/{postId}/creator/{userId}', 'Post\PostController@currentPost');
 
 Route::get('/home', 'HomeController@index')->name('home');

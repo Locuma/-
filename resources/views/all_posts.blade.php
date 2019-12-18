@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Auth;
                 <input type="hidden" class="userId" value="{{$post->user_id}}">
             </div>
             <div>
-                <input type="button" name="currentPost" value="Open this post" onclick="window.location='{{url("currentPost/$post->id")}}'">
+                <input type="button" name="currentPost" value="Open this post" onclick="window.location='{{url("currentPost/$post->id/creator/$post->user_id")}}'">
             </div>
             <button type="button" onclick="showData(this)">Show data</button>
         </div><br>

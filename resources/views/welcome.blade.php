@@ -1,7 +1,3 @@
-<?php
-use Illuminate\Auth\SessionGuard;
-?>
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -69,6 +65,9 @@ use Illuminate\Auth\SessionGuard;
     </head>
     <body>
         <div class="flex-center position-ref full-height">
+            <div class="top-right links">
+                <a href="#">Hhaha</a>
+            </div>
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -93,7 +92,12 @@ use Illuminate\Auth\SessionGuard;
                     @auth
                     <a href="{{ url("createPost") }}">Create post</a>
                     <a href="{{ url("allPosts") }}">All posts</a>
-                        @endauth
+                        <a href="{{ url('logout') }}">Logout</a>
+
+
+                    @endauth
+                    <a href="#">Login</a>
+
                 </div>
             </div>
         </div>
