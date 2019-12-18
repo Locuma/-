@@ -29,3 +29,5 @@ Route::post('/createPost', 'Post\PostController@savePost');
 Route::get('/currentPost/{postId}/creator/{userId}', 'Post\PostController@currentPost');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();

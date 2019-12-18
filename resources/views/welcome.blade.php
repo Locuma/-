@@ -65,13 +65,11 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            <div class="top-right links">
-                <a href="#">Hhaha</a>
-            </div>
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('logout') }}">Logout</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -92,11 +90,7 @@
                     @auth
                     <a href="{{ url("createPost") }}">Create post</a>
                     <a href="{{ url("allPosts") }}">All posts</a>
-                        <a href="{{ url('logout') }}">Logout</a>
-
-
                     @endauth
-                    <a href="#">Login</a>
 
                 </div>
             </div>
