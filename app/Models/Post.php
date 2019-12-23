@@ -26,9 +26,9 @@ class Post extends Model
             ->leftJoin('users', 'post.user_id', '=', 'users.id')
             ->select('post.*', 'users.name')
             ->where([
-                ['users.id','=', $postId],
-                ['post.id', '=', $userId]
-            ])->dd();
+                ['users.id','=', $userId],
+                ['post.id', '=', $postId]
+            ])->first();
         //dd($onePostData);
 
         return [

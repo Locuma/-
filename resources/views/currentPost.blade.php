@@ -13,7 +13,10 @@
             </div>
             <div>
                 <p>Автор: <?= $creatorName ?></p>
-            </div>
+            </div><br>
+            @if($creatorId == Auth::id())
+            <input type="button" value="Edit post" onclick="window.location='{{url("editPost/$postId")}}'">
+                @endif
         </div><br>
     <button type="button" onclick="window.location='{{ url("/") }}'">Return to homepage</button>
     <button type="button" onclick="window.location='{{ url("allPosts") }}'">Back</button>

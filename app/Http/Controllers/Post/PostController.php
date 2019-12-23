@@ -73,15 +73,23 @@ class PostController extends Controller
         $currentPostData = $post->getOnePost($postId, $userId);
         $article = $currentPostData['onePost']->article;
         $creatorName = $currentPostData['onePost']->name;
+        $creatorId = $currentPostData['onePost']->user_id;
         $content = $currentPostData['onePost']->content;
+        $currentPostData['onePost']->content;
 
 
         return view('currentPost', [
             'article' => $article,
             'creatorName' => $creatorName,
             'content' => $content,
+            'creatorId' => $creatorId,
+            'postId' => $postId,
         ]);
 
+    }
+
+    public function editPost($postId){
+        return view('editPost');
     }
 
 
