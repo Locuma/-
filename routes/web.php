@@ -26,7 +26,7 @@ Route::get('/allPosts', 'Post\PostController@getAllPosts');
 
 Route::get('/editPost/{postId}', 'Post\PostController@editPost');
 
-Route::get('/currentPost/{postId}/creator/{userId}', 'Post\PostController@currentPost');
+Route::get('/currentPost/{postId}', 'Post\PostController@currentPost');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

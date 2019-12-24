@@ -67,29 +67,32 @@ class PostController extends Controller
         return view('welcome');
     }
 
-    public function currentPost($postId,$userId)
-    {
+    public function getPostData($postId){
         $post = new Models\Post();
-        $currentPostData = $post->getOnePost($postId, $userId);
-        $article = $currentPostData['onePost']->article;
-        $creatorName = $currentPostData['onePost']->name;
-        $creatorId = $currentPostData['onePost']->user_id;
-        $content = $currentPostData['onePost']->content;
-        $currentPostData['onePost']->content;
+        $neededValues = [];
+        $currentPostData = $post->getOnePost($postId);
 
+        $neededValues['article'] = $currentPostData['onePost']->article;
+        $neededValues['creatorName'] = $currentPostData['onePost']->name;
+        $neededValues['creatorId'] = $currentPostData['onePost']->user_id;
+        $neededValues['content'] = $currentPostData['onePost']->content;
+        $neededValues['postId'] = $currentPostData['onePost']->id;
+        return $neededValues;
+    }
 
-        return view('currentPost', [
-            'article' => $article,
-            'creatorName' => $creatorName,
-            'content' => $content,
-            'creatorId' => $creatorId,
-            'postId' => $postId,
-        ]);
+    public function currentPost($postId)
+    {
+         $postData = $this->getPostData($postId);
+
+       return view('currentPost', $postData);
 
     }
 
     public function editPost($postId){
-        return view('editPost');
+
+        $postData = $this->getPostData($postId);
+
+        return view('editPost', $postData);
     }
 
 

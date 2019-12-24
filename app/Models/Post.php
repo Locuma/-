@@ -20,13 +20,12 @@ class Post extends Model
         ];
     }
 
-    public function getOnePost($postId, $userId)
+    public function getOnePost($postId)
     {
         $onePostData = DB::table('post')
             ->leftJoin('users', 'post.user_id', '=', 'users.id')
             ->select('post.*', 'users.name')
             ->where([
-                ['users.id','=', $userId],
                 ['post.id', '=', $postId]
             ])->first();
         //dd($onePostData);
